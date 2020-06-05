@@ -33,7 +33,8 @@
   },
 
   "storage": {
-    "type": "memcached",
+    "type": "file",
+    "path": "./data",
     "host": "127.0.0.1",
     "port": 11211,
     "expire": 2592000
