@@ -7,6 +7,7 @@ var connect = require('connect');
 var route = require('connect-route');
 var connect_st = require('st');
 var connect_rate_limit = require('connect-ratelimit');
+var cors = require('cors');
 
 var DocumentHandler = require('./lib/document_handler');
 
@@ -99,6 +100,9 @@ var documentHandler = new DocumentHandler({
 });
 
 var app = connect();
+
+// Enable CORS
+app.use(cors());
 
 // Rate limit all requests
 if (config.rateLimits) {
